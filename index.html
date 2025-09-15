@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Free AI-Generated Conversion Report - Pimento</title>
-    <style>
+ <!-- Choices.js CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+<!-- Choices.js JS -->
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    
+ <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
       :root {
@@ -1245,6 +1251,42 @@
           left: 20px;
           top: -20px;
         }
+
+        /* Custom Choices.js Styling */
+.choices__inner {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  min-height: 50px;
+}
+
+.choices__list--dropdown {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  max-height: 220px; /* Scrollable for long options */
+  overflow-y: auto;
+}
+
+.choices__item--choice {
+  white-space: normal !important; /* Wrap long text */
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .choices__inner {
+    font-size: 13px;
+    padding: 10px;
+  }
+  .choices__list--dropdown {
+    font-size: 13px;
+  }
+}
+
       }
     </style>
   </head>
@@ -1522,54 +1564,25 @@
             ></div>
           </div>
 
-          <div class="form-group">
-            <label>Industry</label>
-            <select id="industry" required>
-              <option value="">Select Industry</option>
-              <option value="fashion">
-                Fashion & Apparel – Clothing, streetwear, athleisure, niche
-                apparel brands
-              </option>
-              <option value="beauty">
-                Beauty & Personal Care – Skincare, cosmetics, haircare, grooming
-              </option>
-              <option value="health">
-                Health & Wellness – Supplements, fitness products, CBD, holistic
-                health
-              </option>
-              <option value="food">
-                Food & Beverage – Snacks, coffee, alcohol, meal kits, specialty
-                drinks
-              </option>
-              <option value="home">
-                Home Goods & Furniture – Furniture, bedding, kitchenware, décor
-              </option>
-              <option value="electronics">
-                Consumer Electronics & Tech – Headphones, wearables,
-                phone/laptop accessories, smart home devices
-              </option>
-              <option value="jewelry">
-                Jewelry & Accessories – Watches, fine jewelry, sunglasses, bags
-              </option>
-              <option value="pets">
-                Pet Products – Food, supplements, toys, accessories
-              </option>
-              <option value="baby">
-                Baby & Kids Products – Clothing, toys, educational products,
-                gear
-              </option>
-              <option value="sports">
-                Outdoor, Sports & Lifestyle Gear – Athletic equipment, camping
-                gear, bicycles, performance footwear
-              </option>
-              <option value="other">Other</option>
-            </select>
-            <div
-              class="error-text"
-              id="err-industry"
-              style="display: none"
-            ></div>
-          </div>
+         <div class="form-group">
+  <label>Industry</label>
+  <select id="industry" required>
+    <option value="">Select Industry</option>
+    <option value="fashion">Fashion & Apparel – Clothing, streetwear, athleisure, niche apparel brands</option>
+    <option value="beauty">Beauty & Personal Care – Skincare, cosmetics, haircare, grooming</option>
+    <option value="health">Health & Wellness – Supplements, fitness products, CBD, holistic health</option>
+    <option value="food">Food & Beverage – Snacks, coffee, alcohol, meal kits, specialty drinks</option>
+    <option value="home">Home Goods & Furniture – Furniture, bedding, kitchenware, décor</option>
+    <option value="electronics">Consumer Electronics & Tech – Headphones, wearables, phone/laptop accessories, smart home devices</option>
+    <option value="jewelry">Jewelry & Accessories – Watches, fine jewelry, sunglasses, bags</option>
+    <option value="pets">Pet Products – Food, supplements, toys, accessories</option>
+    <option value="baby">Baby & Kids Products – Clothing, toys, educational products, gear</option>
+    <option value="sports">Outdoor, Sports & Lifestyle Gear – Athletic equipment, camping gear, bicycles, performance footwear</option>
+    <option value="other">Other</option>
+  </select>
+  <div class="error-text" id="err-industry" style="display: none"></div>
+</div>
+
 
           <div class="footer-text">
             That way the AI is better at analyzing it.
