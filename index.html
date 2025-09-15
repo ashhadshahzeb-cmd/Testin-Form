@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Free AI-Generated Conversion Report - Pimento</title>
  <!-- Choices.js CSS -->
+<!-- In <head> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
-
-<!-- Choices.js JS -->
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    
+
  <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
@@ -30,7 +29,7 @@
       }
       body {
         font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-        background: green;
+        background: yellow;
         min-height: 100vh;
         display: flex;
         align-items: flex-start; /* Changed from center to allow scrolling */
@@ -1254,27 +1253,21 @@
 
         /* Custom Choices.js Styling */
 .choices__inner {
-  background: #fff;
   border-radius: 12px;
-  padding: 12px;
   border: 1px solid #ddd;
+  padding: 12px;
   font-size: 14px;
-  min-height: 50px;
 }
 
 .choices__list--dropdown {
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  max-height: 220px; /* Scrollable for long options */
+  max-height: 220px;
   overflow-y: auto;
 }
 
 .choices__item--choice {
   white-space: normal !important; /* Wrap long text */
-  padding: 10px;
-  font-size: 13px;
   line-height: 1.4;
+  padding: 10px;
 }
 
 @media (max-width: 640px) {
@@ -1564,8 +1557,8 @@
             ></div>
           </div>
 
-         <div class="form-group">
-  <label>Industry</label>
+   <div class="form-group">
+  <label for="industry">Industry</label>
   <select id="industry" required>
     <option value="">Select Industry</option>
     <option value="fashion">Fashion & Apparel – Clothing, streetwear, athleisure, niche apparel brands</option>
@@ -1580,7 +1573,6 @@
     <option value="sports">Outdoor, Sports & Lifestyle Gear – Athletic equipment, camping gear, bicycles, performance footwear</option>
     <option value="other">Other</option>
   </select>
-  <div class="error-text" id="err-industry" style="display: none"></div>
 </div>
 
 
@@ -1906,7 +1898,14 @@
       animateCounter(copyElement, 0, targetCopyScore, 10000, false);
     }
   }
-
+document.addEventListener("DOMContentLoaded", function () {
+  const element = document.getElementById("industry");
+  new Choices(element, {
+    searchEnabled: true,   // Search bar inside dropdown
+    itemSelectText: "",    // Remove "Press to select" text
+    shouldSort: false,     // Keep options order as it is
+  });
+});
   // Optional: Reset counters to 0
   function resetCounters() {
     const elements = ["overallCROScore", "uxScore", "aovScore", "copyMessagingScore"];
