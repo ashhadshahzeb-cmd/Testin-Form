@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Free AI-Generated Conversion Report - Pimento</title>
- <!-- Choices.js CSS -->
-<!-- In <head> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+   
+   
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
- <style>
+   <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
       :root {
@@ -29,7 +29,7 @@
       }
       body {
         font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-        background: white;
+        background: #fff;
         min-height: 100vh;
         display: flex;
         align-items: flex-start; /* Changed from center to allow scrolling */
@@ -1017,31 +1017,7 @@
 
 
 
-/* Custom dropdown style for mobile */
-@media (max-width: 640px) {
-  .form-group select {
-    appearance: none;                /* Remove default arrow */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    width: 100%;
-    padding: 14px 16px;
-    font-size: 14px;
-    line-height: 1.4;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: #fff url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 12px center;
-    background-size: 18px;
-    white-space: normal;             /* Wrap long text */
-  }
-
-  .form-group select option {
-    white-space: normal;             /* Allow multi-line options */
-    padding: 10px;
-    font-size: 13px;
-  }
-}
-
+      
       @keyframes scan {
         0% {
           transform: translateX(-100%);
@@ -1251,35 +1227,39 @@
           top: -20px;
         }
 
-        /* Custom Choices.js Styling */
-.choices__inner {
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  padding: 12px;
-  font-size: 14px;
-}
 
-.choices__list--dropdown {
-  max-height: 220px;
-  overflow-y: auto;
-}
-
-.choices__item--choice {
-  white-space: normal !important; /* Wrap long text */
-  line-height: 1.4;
-  padding: 10px;
-}
-
-@media (max-width: 640px) {
-  .choices__inner {
-    font-size: 13px;
-    padding: 10px;
+        .choices__inner {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 14px;
+    min-height: 50px;
   }
+
   .choices__list--dropdown {
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  .choices__item--choice {
+    white-space: normal !important; /* Allow long text wrap */
+    line-height: 1.4;
+    padding: 10px;
     font-size: 13px;
   }
-}
 
+  @media (max-width: 640px) {
+    .choices__inner {
+      font-size: 13px;
+      padding: 10px;
+    }
+    .choices__list--dropdown {
+      font-size: 13px;
+    }
+  }
       }
     </style>
   </head>
@@ -1556,31 +1536,30 @@
               style="display: none"
             ></div>
           </div>
+<div class="form-group">
+    <label>Industry</label>
+    <select id="industry" required>
+      <option value="">Select Industry</option>
+      <option value="fashion">Fashion & Apparel – Clothing, streetwear, athleisure, niche apparel brands</option>
+      <option value="beauty">Beauty & Personal Care – Skincare, cosmetics, haircare, grooming</option>
+      <option value="health">Health & Wellness – Supplements, fitness products, CBD, holistic health</option>
+      <option value="food">Food & Beverage – Snacks, coffee, alcohol, meal kits, specialty drinks</option>
+      <option value="home">Home Goods & Furniture – Furniture, bedding, kitchenware, décor</option>
+      <option value="electronics">Consumer Electronics & Tech – Headphones, wearables, phone/laptop accessories, smart home devices</option>
+      <option value="jewelry">Jewelry & Accessories – Watches, fine jewelry, sunglasses, bags</option>
+      <option value="pets">Pet Products – Food, supplements, toys, accessories</option>
+      <option value="baby">Baby & Kids Products – Clothing, toys, educational products, gear</option>
+      <option value="sports">Outdoor, Sports & Lifestyle Gear – Athletic equipment, camping gear, bicycles, performance footwear</option>
+      <option value="other">Other</option>
+    </select>
+    <div class="error-text" id="err-industry" style="display: none"></div>
+  </div>
 
-   <div class="form-group">
-  <label for="industry">Industry</label>
-  <select id="industry" required>
-    <option value="">Select Industry</option>
-    <option value="fashion">Fashion & Apparel – Clothing, streetwear, athleisure, niche apparel brands</option>
-    <option value="beauty">Beauty & Personal Care – Skincare, cosmetics, haircare, grooming</option>
-    <option value="health">Health & Wellness – Supplements, fitness products, CBD, holistic health</option>
-    <option value="food">Food & Beverage – Snacks, coffee, alcohol, meal kits, specialty drinks</option>
-    <option value="home">Home Goods & Furniture – Furniture, bedding, kitchenware, décor</option>
-    <option value="electronics">Consumer Electronics & Tech – Headphones, wearables, phone/laptop accessories, smart home devices</option>
-    <option value="jewelry">Jewelry & Accessories – Watches, fine jewelry, sunglasses, bags</option>
-    <option value="pets">Pet Products – Food, supplements, toys, accessories</option>
-    <option value="baby">Baby & Kids Products – Clothing, toys, educational products, gear</option>
-    <option value="sports">Outdoor, Sports & Lifestyle Gear – Athletic equipment, camping gear, bicycles, performance footwear</option>
-    <option value="other">Other</option>
-  </select>
+  <div class="footer-text">
+    That way the AI is better at analyzing it.
+  </div>
+  <button class="cta-button">Generate My AI Report →</button>
 </div>
-
-
-          <div class="footer-text">
-            That way the AI is better at analyzing it.
-          </div>
-          <button class="cta-button">Generate My AI Report →</button>
-        </div>
 
         <div class="step" id="step6">
           <div class="analysis-wrap">
@@ -1898,14 +1877,7 @@
       animateCounter(copyElement, 0, targetCopyScore, 10000, false);
     }
   }
-document.addEventListener("DOMContentLoaded", function () {
-  const element = document.getElementById("industry");
-  new Choices(element, {
-    searchEnabled: true,   // Search bar inside dropdown
-    itemSelectText: "",    // Remove "Press to select" text
-    shouldSort: false,     // Keep options order as it is
-  });
-});
+
   // Optional: Reset counters to 0
   function resetCounters() {
     const elements = ["overallCROScore", "uxScore", "aovScore", "copyMessagingScore"];
@@ -1914,7 +1886,16 @@ document.addEventListener("DOMContentLoaded", function () {
       if (element) element.textContent = "0";
     });
   }
-
+document.addEventListener("DOMContentLoaded", function () {
+    const industrySelect = document.getElementById("industry");
+    if (industrySelect) {
+      new Choices(industrySelect, {
+        searchEnabled: true,   // Enable search inside dropdown
+        itemSelectText: "",    // Remove "Press to select" text
+        shouldSort: false,     // Keep original order
+      });
+    }
+  });
   // ================= EXISTING FORM LOGIC =================
   // Industry data
   const industries = {
