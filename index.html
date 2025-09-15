@@ -1012,24 +1012,28 @@
 
 
 
-      /* Mobile dropdown fix */
+/* Custom dropdown style for mobile */
 @media (max-width: 640px) {
-  select#industry {
-    font-size: 14px;             /* Smaller text for better fit */
-    padding: 14px;               /* Comfortable padding */
+  .form-group select {
+    appearance: none;                /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 14px;
     line-height: 1.4;
-    white-space: normal;         /* Allow wrapping of long text */
-    height: auto;                /* Expand height dynamically */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 12px center;
+    background-size: 18px;
+    white-space: normal;             /* Wrap long text */
   }
 
-  select#industry option {
+  .form-group select option {
+    white-space: normal;             /* Allow multi-line options */
+    padding: 10px;
     font-size: 13px;
-    white-space: normal;         /* Allow option text to wrap */
-    padding: 10px;               /* Space inside options */
-  }
-
-  .form-group label {
-    font-size: 13px;             /* Slightly smaller labels */
   }
 }
 
